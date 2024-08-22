@@ -12,10 +12,13 @@ background-image: url("purple\ pattern.gif");
 font-family: 'Saira Extra Condensed', sans-serif;
 color: #4b4c77;
 scroll-behavior: smooth;
-font-size: 2.25rem;
-
+/* font-size: 2.25rem;
+ */
 }
    
+body
+{
+}
  
 nav, ul, li, a
 {
@@ -62,7 +65,7 @@ h3:hover
 
 ul, li
 {
-  scale: 120%;
+  scale: 80%;
   margin-bottom: 25px;
 
 }
@@ -78,13 +81,105 @@ header
 {
   position: sticky;
   top: -30px;
-  border: solid 7px  #e2def2;
   border-radius: 15px;
-  box-shadow: 15px 5px 5px #7568ac;
+  font-size: 2rem; 
 }
 
 .portfolio
 {
   margin-left: 45px;
-  font-size: 2.5rem;
 }
+
+
+
+ .check {
+    position: absolute;
+    left: -250px;
+}
+
+.nav-desktop {
+    display: block;
+}
+
+.nav-desktop ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    gap: 16px;
+
+}
+.nav-mobile
+{
+    transform: translateX(-150%);
+    transition: transform .5s ease;
+}
+
+.nav-mobile ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hamburger {
+    display: none;
+}
+
+@media (max-width: 40rem) {
+    .nav-desktop {
+       display: none;
+    }
+    .nav-mobile {
+        transform: translateX(-150%);
+    }
+    main
+  {
+    margin: 50px; 
+    padding-right: 25px;
+  }
+      .hamburger {
+        display: block;
+    }
+    .nav-icon-hamburger {
+        display: block;
+    }
+      .nav-icon-close {
+        display: none;
+    }
+    .check:checked ~ .hamburger .nav-icon-hamburger {
+            /* 1) Hide it visually */
+        opacity: 0;
+        /* 2) Make it unaccessible to mouse and keyboard */
+        pointer-events: none;
+        /* 3) Hide it from screen readers */
+        visibility: hidden;
+        /* display: none; */
+    }
+    .check:checked ~ .hamburger .nav-icon-close {
+        display: block;
+    }
+    .check:checked ~ .nav-mobile {
+        transform: translateX(0%);
+    }
+
+}
+
+h1{
+font-size: clamp(2rem, 1.0388349514563107rem + 2.669902912621359vw, 13.375rem);
+}
+
+
+h2
+{
+font-size: clamp(1.563rem, 1.3009708737864079rem + 1.9417475728155338vw, 3rem);
+}
+
+h3
+{
+  font-size: clamp(1.25rem, 1.3009708737864079rem + 1.9417475728155338vw, 3rem);
+}
+
+h4, p{
+    font-size: clamp(1rem, 1.3009708737864079rem + 1.9417475728155338vw, 3rem);
+}
+
